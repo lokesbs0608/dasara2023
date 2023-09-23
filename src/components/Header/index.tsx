@@ -5,13 +5,13 @@ function Header() {
     <div className="px-24 py-4" style={{ margin: "0 auto" ,background:'#fff'}}>
       <div className="flex justify-between">
         <div>
-          <a>Home</a>
+          <a href="#">Home</a>
         </div>
         <div>
           <a>About</a>
         </div>
         <div>
-          <a>Event</a>
+          <a href="#liveStream">Event</a>
         </div>
         <div>
           <a>Tickets & Live</a>

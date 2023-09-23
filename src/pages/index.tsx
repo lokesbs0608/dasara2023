@@ -8,7 +8,10 @@ export default function Home() {
     <div>
       <HeroSection />
       <Guest />
+      <div id="liveStream">
+
       <LiveStrem/>
+      </div>
     </div>
   );
 }
