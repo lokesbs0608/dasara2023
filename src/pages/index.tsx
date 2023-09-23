@@ -6,7 +6,6 @@ import LiveStrem from "@/components/liveStream";
 export default function Home() {
   return (
     <div>
-      <Header />
       <HeroSection />
       <Guest />
       <LiveStrem/>
