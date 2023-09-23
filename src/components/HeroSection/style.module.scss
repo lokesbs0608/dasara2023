@@ -1,0 +1,53 @@
+.bg {
+    background-image: url("../../../public/images/unsplash_xtgONQzGgOE.png");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+  }
+  .bg_arch {
+    background-image: url("../../../public/images/Frame.png");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    height:80vh;
+    width: 100%;
+  }
+.bg_elephant{
+    background-image: url("../../../public/images/Elephant.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    z-index: 100;
+    height:50vh;
+    width: 54%;
+    position: absolute;
+    right: 31%;
+    bottom: 0;
+}
+.redlogobg{
+    background-image: url("../../../public/images/redlogobg.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.Time_bg{
+    background-image: url("../../../public/images/TimeBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center ;
+    height: 100vh;
+    width: 100%;
+}
+  
+  @media (max-width: 768px) {
+    
+    .bg_arch {
+      background-size: contain; 
+      height: 16vh; 
+    }
+  }
