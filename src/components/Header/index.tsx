@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="mx-auto p-4" style={{ margin: "0 auto", maxWidth: "1200px" }}>
+    <div className="px-24 py-4" style={{ margin: "0 auto" ,background:'#fff'}}>
       <div className="flex justify-between">
         <div>
           <a>Home</a>
