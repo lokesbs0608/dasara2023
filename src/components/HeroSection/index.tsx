@@ -4,7 +4,7 @@ import Image from 'next/image';
 import image1 from '../../../public/images/57533 [Converted] 1.png'
 import image_2 from '../../../public/images/GovLogo.png'
 import Elephantlogo from '../../../public/images/Elephantlogo.png'
-import KumarSwamy from '../../../public/images/Kumarswamy.png'
+import KumarSwamy from '../../../public/images/Kumarswamy.svg'
 import DkshivrajKumar from '../../../public/images/dkshivkumar.png'
 import hcmadevappa from '../../../public/images/hcmadevappa.png'
 import shivraj from '../../../public/images/shivraj.png'
