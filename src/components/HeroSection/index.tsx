@@ -9,7 +9,7 @@ import DkshivrajKumar from '../../../public/images/dkshivkumar.png'
 import hcmadevappa from '../../../public/images/hcmadevappa.png'
 import shivraj from '../../../public/images/shivraj.png'
 import Elephant from '../../../public/images/Elephant.png'
-import GoldenStick from '../../../public/images/GoldenStick.png'
+import stickbottom from '../../../public/images/stickbottom.png'
 import stick from '../../../public/images/stick (2).png'
 
 function HeroSection() {
@@ -64,14 +64,14 @@ function HeroSection() {
             <div className='mt-12'>
                 <Image src={stick} alt={'GoldenStick'}/>
             </div>
-            <div className='flex justify-center items-center   '>
+            <div className='flex justify-center items-center  mt-8 '>
                <p className='text-7xl font-semibold' style={{color:"#FFF504", textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>ನಾಡ ಹಬ್ಬ ಮೈಸೂರು ದಸರಾ</p> 
             </div>
             <div className='flex justify-center items-center pt-8' style={{color:"#fff"}}>
-                <p className=' w-[70%] break-word '>‘ಮೈಸೂರು ದಸರಾ ಎಷ್ಟೊಂದು ಸುಂದರ’..... ಸಾಂಸ್ಕೃತಿಕ ನಗರಿ ಮೈಸೂರಿನಲ್ಲಿ ಸುಂದರ, ಸಡಗರ, ಸಂಭ್ರಮಕ್ಕಿರುವ ಇನ್ನೊಂದು ಹೆಸರೇ ದಸರಾ. ವಿಜಯನಗರ ಅರಸರಿಂದ ಆರಂಭವಾದ ಈ ಭವ್ಯ ವೈಭವಕ್ಕೆ ನಾಡಿನಲ್ಲಿ ಸಾಕಷ್ಟು ಮನ್ನಣೆ, ಪ್ರಾಮುಖ್ಯತೆ ದೊರಕಿದೆ. ಸುದೀರ್ಘ ಇತಿಹಾಸವಿರುವ ದಸರಾ ‘ಕರ್ನಾಟಕದ ನಾಡಹಬ್ಬ’ ಎಂದೇ ಪ್ರಸಿದ್ಧಿಯಾಗಿದೆ. ವಿಶ್ವವಿಖ್ಯಾತ ಮೈಸೂರು ದಸರಾ ಕರ್ನಾಟಕ ಸರ್ಕಾರ ನಡೆಸಿಕೊಂಡು ಬರುತ್ತಿರುವ ಅತ್ಯಂತ ದೊಡ್ಡ ಹಬ್ಬವಾಗಿದೆ.</p>
+                <p className=' w-[70%] whitespace-pre-line '>‘ಮೈಸೂರು ದಸರಾ ಎಷ್ಟೊಂದು ಸುಂದರ’..... ಸಾಂಸ್ಕೃತಿಕ ನಗರಿ ಮೈಸೂರಿನಲ್ಲಿ ಸುಂದರ, ಸಡಗರ, ಸಂಭ್ರಮಕ್ಕಿರುವ ಇನ್ನೊಂದು ಹೆಸರೇ ದಸರಾ. ವಿಜಯನಗರ ಅರಸರಿಂದ ಆರಂಭವಾದ ಈ ಭವ್ಯ ವೈಭವಕ್ಕೆ ನಾಡಿನಲ್ಲಿ ಸಾಕಷ್ಟು ಮನ್ನಣೆ, ಪ್ರಾಮುಖ್ಯತೆ ದೊರಕಿದೆ. ಸುದೀರ್ಘ ಇತಿಹಾಸವಿರುವ ದಸರಾ ‘ಕರ್ನಾಟಕದ ನಾಡಹಬ್ಬ’ ಎಂದೇ ಪ್ರಸಿದ್ಧಿಯಾಗಿದೆ. ವಿಶ್ವವಿಖ್ಯಾತ ಮೈಸೂರು ದಸರಾ ಕರ್ನಾಟಕ ಸರ್ಕಾರ ನಡೆಸಿಕೊಂಡು ಬರುತ್ತಿರುವ ಅತ್ಯಂತ ದೊಡ್ಡ ಹಬ್ಬವಾಗಿದೆ.</p>
             </div>
-            <div className='mt-12'>
-                <Image src={GoldenStick} alt={'GoldenStick'}/>
+            <div className='flex justify-center items-center mt-12 '>
+                <Image src={stickbottom} alt={'GoldenStick'} height={70}/>
             </div>
         </div>
     </div>
