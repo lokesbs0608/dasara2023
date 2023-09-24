@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
-import Header from "../components/Header";
 import Guest from "@/components/guest";
 import LiveStrem from "@/components/liveStream";
+import PressNote from "@/components/gallery";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <div id="liveStream">
 
       <LiveStrem/>
+      <PressNote/>
       </div>
     </div>
   );
