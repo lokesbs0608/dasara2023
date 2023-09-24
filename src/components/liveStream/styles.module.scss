@@ -3,8 +3,31 @@
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center; 
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
 
   }
+  .container {
+    position: relative;
+    width: 460.85px;
+    height: 284.5px;
+    
+    iframe {
+        position: absolute;
+        top: 25%;
+        left: 9px;
+        width: 96%;
+        height: 100%;
+        z-index: 2;
+        border-radius: 22px;
+        opacity: 1;
+        overflow: hidden;
+      }
+  }
+  
+  .image {
+    position: relative;
+    z-index: 2;
+  }
+  
