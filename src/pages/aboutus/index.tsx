@@ -38,7 +38,7 @@ const AboutUs = () => {
         {" "}
         {language === "kn" ? "ನಮ್ಮ ಬಗ್ಗೆ" : " ABOUT"}{" "}
       </h1>
-      <div className="flex  items-center justify-center gap-1 py-12">
+      <div className="flex  items-start justify-center gap-1 py-12">
         <div
           style={{
             width: "45%",
@@ -58,15 +58,18 @@ const AboutUs = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: "50px",
+
           }}
         >
           <Image src={frmae1} alt="frame" />
           <div style={{ padding: "50px", textAlign: "center" }}>
             <h1
-              style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}
+              style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" ,marginBottom:'30px' }}
             >
-              Naada Habba Mysore Dasara
+         
+            {language === "kn"
+              ? "ನಾಡ ಹಬ್ಬ ಮೈಸೂರು  ದಸರಾ"
+              : " Naada Habba Mysore Dasara "}
             </h1>
             <p style={{ textAlign: "justify", color: "#fff" }}>
               {language == "kn"
