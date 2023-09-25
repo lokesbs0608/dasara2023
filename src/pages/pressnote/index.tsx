@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import Videfrmaw from "../../../public/images/videoframe.svg";
-import Images from "../../../public/mysuru_palace_ (1) 3.png";
 import GlodFrmae from "../../../public/images/glodframe.svg";
 import { useLanguage } from "../../components/languageContext";
 import Link from "next/link";
+import GetApi from "../../utils/network";
 
 const PressNote = () => {
+  const [data, setData] = useState([]);
   const { language } = useLanguage();
+  useEffect(() => {
+    // Define an async function for your API call
+    async function fetchData() {
+      try {
+        const resp = await GetApi("pressnote"); // Replace with the desired API endpoint
+        console.log(resp, ">>>>");
+        setData(resp);
+      } catch (error: any) {
+        console.error(error.message);
+      }
+    }
+
+    // Call the async function immediately
+    fetchData();
+  }, []);
   return (
     <div className={styles.bg}>
       <div style={{ width: "100%" }}>
@@ -34,24 +49,37 @@ const PressNote = () => {
             </tr>
           </thead>
           <tbody>
-            {[1, 2, 3, 4, 56, 7, 89, 1, 1, 1, 1].map((item, index) => {
-              return (
-                <tr>
-                  <td>yes</td>
-                  <td>yes</td>
-                  <td>
-                    yes{" "}
-                    <Link
-                      style={{ color: "#FFF504", fontSize: "14px" }}
-                      href="pressnote/pressdetails"
-                      as={`pressnote/pressdetails?id=${index}`}
-                    >
-                      Read More..
-                    </Link>
-                  </td>
-                </tr>
-              );
-            })}
+            {data &&
+              data?.map((item: any, index: number) => {
+                console.log(item);
+                return (
+                  <tr key={index}>
+                    <td>{item?.UpdatedAt}</td>
+                    <td>
+                      {language === "kn"
+                        ? item?.news_title_kn
+                        : item?.news_title_en
+                        ? item?.news_title_en
+                        : item?.news_title_kn}
+                    </td>
+                    <td>
+                      {(language === "kn"
+                        ? item?.news_content_long_kn
+                        : item?.news_content_short_en
+                        ? item?.news_content_short_en
+                        : item?.news_content_long_kn
+                      )?.substring(0, 30)}
+                      <Link
+                        style={{ color: "#FFF504", fontSize: "14px" }}
+                        href="pressnote/pressdetails"
+                        as={`pressnote/pressdetails?id=${item?.Id}`}
+                      >
+                        Read More..
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>

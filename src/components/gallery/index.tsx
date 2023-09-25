@@ -33,10 +33,12 @@ const PressNote = () => {
         }}
       >
         {[1, 2, 3, 4, 5, 6].map((item, index) => {
-          const marginTopStyle = index >= 3 ? { marginTop: "120px" } : {marginTop: "40px"}; // Conditional style
+          const marginTopStyle =
+            index >= 3 ? { marginTop: "120px" } : { marginTop: "40px" }; // Conditional style
 
           return (
             <div
+              key={index}
               style={{ ...marginTopStyle }}
               className={`${styles.container}`}
             >
