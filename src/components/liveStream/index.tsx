@@ -56,7 +56,7 @@ const LiveStrem = () => {
             <h1
               style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}
             >
-              Yuva Dasara - 2023
+                {language === "kn" ? "ಯುವ ದಸರಾ - ೨೦೨೩" : "Yuva Dasara - 2023 "}{" "} 
             </h1>
             <p style={{ textAlign: "center", color: "#fff" }}>
               Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
@@ -83,7 +83,7 @@ const LiveStrem = () => {
             <h1
               style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}
             >
-              Jambu Savari - 2023
+               {language === "kn" ? " ಜಂಬೂ ಸವಾರಿ - ೨೦೨೩" : " Jambu Savari - 2023  "}{" "} 
             </h1>
             <p style={{ textAlign: "center", color: "#fff" }}>
               Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
