@@ -70,6 +70,9 @@ const PressNote = () => {
                         : item?.news_content_long_kn
                       )?.substring(0, 30)}
                       <Link
+                        onClick={() =>
+                          localStorage.setItem("pressNoteID", item?.Id)
+                        }
                         style={{ color: "#FFF504", fontSize: "14px" }}
                         href="pressnote/pressdetails"
                         as={`pressnote/pressdetails?id=${item?.Id}`}

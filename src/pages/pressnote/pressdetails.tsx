@@ -17,7 +17,7 @@ const PressDetails = () => {
     async function fetchData() {
       try {
         const resp = await GetApi(
-          `pressnote/${queryId}`
+          `pressnote/${ localStorage.getItem("pressNoteID",)}`
         );
         setNews(resp);
       } catch (error: any) {
