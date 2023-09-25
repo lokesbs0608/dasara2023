@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import Chamundi from "../../../public/images/Chamundi.svg";
@@ -6,12 +6,29 @@ import frmae1 from "../../../public/images/AboutusFrame1.svg";
 import frmae2 from "../../../public/images/AboutusFrame2.svg";
 import { useLanguage } from "../../components/languageContext";
 import GlodFrmae from "../../../public/images/glodframe.svg";
+import GetApi from "../../utils/network";
 
 const AboutUs = () => {
+  const [data, setData] = useState([{ content_kn: "", content_en: "" }]);
   const { language } = useLanguage();
+  useEffect(() => {
+    // Define an async function for your API call
+    async function fetchData() {
+      try {
+        const resp = await GetApi("about_mysuru_dasara"); // Replace with the desired API endpoint
+        console.log(resp, ">>>>");
+        setData(resp);
+      } catch (error: any) {
+        console.error(error.message);
+      }
+    }
+
+    // Call the async function immediately
+    fetchData();
+  }, []);
   return (
     <div className={styles.bg}>
-     <div style={{ width: "100%",}}>
+      <div style={{ width: "100%" }}>
         <Image width={2000} src={GlodFrmae} alt="frame" />
       </div>
       <h1
@@ -51,18 +68,12 @@ const AboutUs = () => {
             >
               Naada Habba Mysore Dasara
             </h1>
-            <p style={{ textAlign: "center", color: "#fff" }}>
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum LoremIpsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Read More
+            <p style={{ textAlign: "justify", color: "#fff" }}>
+              {language == "kn"
+                ? data[0]?.content_kn
+                : data[0]?.content_en
+                ? data[0]?.content_en
+                : data[0]?.content_kn}
             </p>
           </div>
           <Image src={frmae2} alt="frame" />

@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import Videfrmaw from "../../../public/images/videoframe.svg";
 import Images from "../../../public/mysuru_palace_ (1) 3.png";
 import GlodFrmae from "../../../public/images/glodframe.svg";
 import { useLanguage } from "../languageContext";
+import GetApi from "../../utils/network";
 
 const PressNote = () => {
+  const [data, setData] = useState([{ images: { images: [] } }]);
   const { language } = useLanguage();
+  useEffect(() => {
+    // Define an async function for your API call
+    async function fetchData() {
+      try {
+        const resp = await GetApi("gallery"); // Replace with the desired API endpoint
+        console.log(resp, ">>>>");
+        setData(resp);
+      } catch (error: any) {
+        console.error(error.message);
+      }
+    }
+
+    // Call the async function immediately
+    fetchData();
+  }, []);
   return (
     <div className={styles.bg}>
       <div style={{ width: "100%" }}>
@@ -32,17 +49,22 @@ const PressNote = () => {
           justifyContent: "center",
         }}
       >
-        {[1, 2, 3, 4, 5, 6].map((item, index) => {
+        {data[0]?.images?.images?.map((item: any, index: number) => {
           const marginTopStyle =
             index >= 3 ? { marginTop: "120px" } : { marginTop: "40px" }; // Conditional style
-
           return (
             <div
               key={index}
               style={{ ...marginTopStyle }}
               className={`${styles.container}`}
             >
-              <Image src={Images} alt="yes" className={styles.sub_image} />
+              <Image
+                width={100}
+                height={100}
+                src={item}
+                alt="yes"
+                className={styles.sub_image}
+              />
               <Image src={Videfrmaw} alt="yes" className={styles.image} />
             </div>
           );
